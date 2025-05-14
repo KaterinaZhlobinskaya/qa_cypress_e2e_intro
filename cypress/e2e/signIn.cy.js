@@ -13,9 +13,9 @@ describe('Sign In page', () => {
     const { username, email, password } = createRandomUser();
     cy.visit('https://react-redux.realworld.io');
     cy.contains('Sign up').click();
+    cy.get('input[placeholder="Username"]').type(username);
     cy.get('input[placeholder="Email"]').type(email);
     cy.get('input[placeholder="Password"]').type(password);
-    cy.get('input[placeholder="Username"]').type(username);
     cy.get('button').contains('OK').click();
     cy.contains('Settings').click();
     cy.contains('log out').click();
